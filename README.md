@@ -9,4 +9,4 @@ Visit [qr.mbokinala.com](https://qr.mbokinala.dev) to use online.
 
 ## Todo
 
-[ ] handle colors without leading `#`
+- [ ] handle colors without leading `#`
