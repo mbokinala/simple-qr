@@ -10,6 +10,7 @@ import { Toaster } from "./components/ui/toaster";
 import { useToast } from "./components/ui/use-toast";
 import { cn } from "./lib/utils";
 import { Checkbox } from "./components/ui/checkbox";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 const MAX_SIZE = 500;
 
@@ -64,7 +65,7 @@ const ColorField = ({
         />
         <div className="flex items-center space-x-2">
           <Checkbox
-            id="terms"
+            id={`${placeholder}-transparent`}
             checked={transparent}
             onCheckedChange={(isChecked) => {
               setTransparent(!!isChecked);
@@ -74,7 +75,7 @@ const ColorField = ({
             }}
           />
           <label
-            htmlFor="terms"
+            htmlFor={`${placeholder}-transparent`}
             className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
             Transparent
@@ -245,7 +246,7 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
       <div className="p-4 w-full md:p-0 md:w-1/2">
-        <div className="flex gap-2 mb-8 items-center">
+        <div className="flex gap-2 mb-4 items-center">
           <Label htmlFor={"placeholder"} className="font-bold">
             Target
           </Label>
@@ -334,6 +335,11 @@ function App() {
             <Button onClick={copyPNG}>Copy PNG</Button>
             <Button onClick={downloadPNG}>Download PNG</Button>
           </div>
+        </div>
+        <div className="flex justify-center items-center mt-4">
+        <a href="https://github.com/mbokinala/simple-qr">
+            <GitHubLogoIcon className="size-6" />
+          </a>
         </div>
       </div>
       <Toaster />
